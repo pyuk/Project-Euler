@@ -7,8 +7,7 @@ takeDiag z n xs@(x:_)
 takeDiag2 :: Int -> Int -> [[Int]] -> Int
 takeDiag2 _ _ [] = 1
 takeDiag2 z n xs@(x:_)
-  | n < 0 = 1
-  | z < length xs && n < length x = (xs !! z) !! n * takeDiag2 (z + 1) (n - 1) xs
+  | z < length xs && n > 0 = (xs !! z) !! n * takeDiag2 (z + 1) (n - 1) xs
   | otherwise = 1
 
 findProducts :: Int -> [[Int]] -> [Int]
